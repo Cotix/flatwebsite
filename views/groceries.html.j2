@@ -2,15 +2,46 @@
 
 {% block name %} Boodschappen {% endblock %}
 
+{% block css %}
+    a {
+        color: inherit;
+    }
+{% endblock %}
+
 {% block content %}
     <div class="row my-2">
-        <div class="card col my-2">
+        <div class="card col-md-6 col-sm offset-md-3 my-2">
             <div class="card-body">
                 <h5 class="card-title">Boodschappen</h5>
                 <p class="card-text">
-                    Deze pagina is nog leeg...
+                    <ol>
+                    {% for grocery in groceries %}
+                        <li>
+                            {{ grocery.text }}
+                            <a href="/groceries/{{ grocery.id }}/delete"><i class="fas fa-minus-circle float-right"></i></a>
+                        </li>
+                    {% endfor %}
+                    </ol>
                 </p>
             </div>
         </div>
     </div>
+    <div class="row my-2">
+        <div class="card col-md-6 col-sm offset-md-3 my-2">
+            <div class="card-body">
+                <h5 class="card-title">Item toevoegen</h5>
+                <p class="card-text">
+                    <form action="/groceries" method="POST">
+                        <div class="form-group">
+                            <label for="username">Naam</label>
+                            <input class="form-control" id="name"
+                                   name="name" placeholder="WC Papier">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Toevoegen</button>
+                    </form>
+                </p>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
