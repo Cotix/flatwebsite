@@ -1,4 +1,5 @@
 from flask_login import login_required
+from flask import redirect
 
 from config import *
 from util import html
@@ -15,12 +16,11 @@ def blog():
     return html.ok('blog', {})
 
 
-@app.route('/quotes', methods=['GET'])
-@login_required
-def quotes():
-    return html.ok('quotes', {})
-
 @app.route('/eetlijst', methods=['GET'])
 @login_required
 def eetlijst():
-    return html.ok('eetlijst', {})
+    # Serving eetlijst in a iframe sounds like a good idea
+    # But eetlijst is http only, which means we cant serve it on our https production version
+    #return html.ok('eetlijst', {'eetlijst_url': app.config['EETLIJST_URL']})
+    return redirect(app.config['EETLIJST_URL'])
+

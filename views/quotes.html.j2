@@ -1,14 +1,48 @@
 {% extends "layouts/application.html.j2" %}
+{% import "macros/pagination.html.j2" as pagination %}
 
 {% block name %} Quotes {% endblock %}
 
 {% block content %}
     <div class="row my-2">
-        <div class="card col my-2">
+        <div class="card col-md-6 col-sm offset-md-3 my-2">
             <div class="card-body">
                 <h5 class="card-title">Quotes</h5>
                 <p class="card-text">
-                    Deze pagina is nog leeg...
+                    <ul>
+                    {% for quote in quotes %}
+                        <li>
+                            <strong>{{ quote.author.first_name }}:</strong> {{ quote.text }}
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </p>
+                {{ pagination.render('show_quotes', pages) }}
+            </div>
+        </div>
+    </div>
+    <div class="row my-2">
+        <div class="card col-md-6 col-sm offset-md-3 my-2">
+            <div class="card-body">
+                <h5 class="card-title">Item toevoegen</h5>
+                <p class="card-text">
+                    <form action="/quotes" method="POST">
+                        <div class="form-group">
+                            <label for="author">Huisgenoot</label>
+                            <select class="form-control" id="author"
+                                   name="author">
+                                {% for person in people %}
+                                    <option value="{{person.id}}">{{ person.first_name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="text">Quote</label>
+                            <input class="form-control" id="text"
+                                   name="text">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Toevoegen</button>
+                    </form>
                 </p>
             </div>
         </div>

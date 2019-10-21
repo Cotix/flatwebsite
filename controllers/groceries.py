@@ -16,7 +16,7 @@ def show_groceries():
         if item_name:
             db.session.add(Grocery(creator_id=current_user.id, text=item_name))
             db.session.commit()
-
+        return redirect(url_for('show_groceries'))
     data = {
         'groceries': Grocery.query.filter(Grocery.fetched_date.is_(None)).all()
     }

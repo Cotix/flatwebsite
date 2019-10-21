@@ -1,10 +1,7 @@
+from flask import render_template
+
 from config import *
 from jinja2 import Environment, FileSystemLoader, select_autoescape
-
-env = Environment(
-    loader=FileSystemLoader('views/'),
-    autoescape=select_autoescape(['j2', 'html'])
-)
 
 
 def ok(view, data={}, **args):
@@ -12,7 +9,8 @@ def ok(view, data={}, **args):
         'status': 200,
     }
     options.update(args)
-    body = env.get_template('%s.html.j2' % view).render(data)
+    body = render_template('%s.html.j2' % view, **data)
+
     res = Response(body, status=options['status'], mimetype='text/html')
     return res
 
