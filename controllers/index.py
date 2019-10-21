@@ -19,3 +19,8 @@ def blog():
 @login_required
 def quotes():
     return html.ok('quotes', {})
+
+@app.route('/eetlijst', methods=['GET'])
+@login_required
+def eetlijst():
+    return html.ok('eetlijst', {})

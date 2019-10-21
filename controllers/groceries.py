@@ -29,5 +29,6 @@ def delete_groceries(id):
     grocery = Grocery.query.get(id)
     if grocery:
         grocery.fetched_date = datetime.datetime.now()
+        grocery.fetcher_id = current_user.id
         db.session.commit()
     return redirect(url_for('show_groceries'))
