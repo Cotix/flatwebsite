@@ -9,6 +9,10 @@ from util import html
 def index():
     return html.ok('index', {})
 
+@app.route('/kamerzoekers', methods=['GET'])
+def kamerzoekers():
+    return html.ok('kamerzoekers', {})
+
 
 @app.route('/blog', methods=['GET'])
 @login_required
@@ -23,4 +27,3 @@ def eetlijst():
     # But eetlijst is http only, which means we cant serve it on our https production version
     #return html.ok('eetlijst', {'eetlijst_url': app.config['EETLIJST_URL']})
     return redirect(app.config['EETLIJST_URL'])
-
