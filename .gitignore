@@ -1,6 +1,6 @@
 __pycache__
 *.pyc
-static/users/*
+static/uploads
 .env
 local.db
 .idea/*

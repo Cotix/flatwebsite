@@ -9,10 +9,6 @@ from util import html
 def index():
     return html.ok('index', {})
 
-@app.route('/kamerzoekers', methods=['GET'])
-def kamerzoekers():
-    return html.ok('kamerzoekers', {})
-
 
 @app.route('/blog', methods=['GET'])
 @login_required
