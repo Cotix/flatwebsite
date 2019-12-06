@@ -29,7 +29,7 @@ def photo_upload_page(errors=[]):
 def thumbnail(filename):
     with Image(filename=filename) as img:
         img.resize(400, int(img.height/img.width*400))
-        img.transform('400x300')
+        img.crop(width=400, height=300, gravity='center')
         img.save(filename=filename+'.thumb.jpg')
 
 
