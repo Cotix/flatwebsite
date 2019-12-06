@@ -16,12 +16,12 @@ def get_extension(filename):
 
 
 def categories():
-    return [p for p in Photo.query.distinct(Photo.category).group_by(Photo.category)]
+    return [c[0] for c in db.session.query(Photo.category).distinct(Photo.category)]
 
 
 def photo_upload_page(errors=[]):
     return html.ok('photos/photo_upload', {
-        'categories': [p.category for p in categories()],
+        'categories': [c for c in categories()],
         'errors': errors
     })
 
@@ -56,11 +56,15 @@ def photo_upload():
 
     return redirect(url_for('show_albums'))
 
+
 @app.route('/photos', methods=['GET'])
 @login_required
 def show_albums():
+    category_photo = {
+        c: Photo.query.filter(Photo.category == c).first() for c in categories()
+    }
     return html.ok('photos/show_photos', {
-        'cards': [{'photo': p, 'text': p.category, 'href': f'/photos/album/{p.category}'} for p in categories()]
+        'cards': [{'photo': p, 'text': c, 'href': f'/photos/album/{c}'} for c, p in category_photo.items()]
     })
 
 
