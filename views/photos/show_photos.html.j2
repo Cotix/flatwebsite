@@ -1,0 +1,34 @@
+{% extends "layouts/application.html.j2" %}
+
+{% block name %} Fotoboek {% endblock %}
+{% block css %}
+    card {
+        height: 100%;
+    }
+{% endblock %}
+{% block content %}
+<div class="my-2">
+    <div class="container">
+        <div class="row">
+        {% for card in cards %}
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img class="card-img-top" src="/static/uploads/{{card.photo.filename}}.thumb.jpg" alt="{{card.photo.description}}">
+                    <div class="card-body">
+                        <p class="card-text">{{ card.text }}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="{{ card.href }}">
+                                    <button type="button" class="btn">Bekijk</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+

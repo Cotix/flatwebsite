@@ -10,11 +10,13 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__, template_folder='views')
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.debug = os.getenv('APP_DEBUG').lower() == 'true'
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DB_URL')
 app.secret_key = os.getenv('APP_SECRET')
 
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DB_URL')
+
+app.config['UPLOAD_FOLDER'] = 'static/uploads'
 app.config['EETLIJST_URL'] = os.getenv('EETLIJST_URL')
 
 db = SQLAlchemy(app)

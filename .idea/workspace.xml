@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3190e59d-ae44-45d3-8231-1d26fcca6646" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/controllers/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/index.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/util/random.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/photos/show_highres.html.j2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/flatwebsite.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/flatwebsite.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/person.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/person.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/layouts/application.html.j2" beforeDir="false" afterPath="$PROJECT_DIR$/views/layouts/application.html.j2" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,10 +19,26 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -25,14 +50,20 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/controllers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/views/photos" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/views/photos" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/controllers" />
+      <recent name="$PROJECT_DIR$/views/photos" />
       <recent name="$PROJECT_DIR$/views" />
+      <recent name="$PROJECT_DIR$/models" />
+      <recent name="$PROJECT_DIR$/controllers" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -75,6 +106,10 @@
       <option name="presentableId" value="Default" />
       <updated>1571646248689</updated>
       <workItem from="1571646255563" duration="6251000" />
+      <workItem from="1572703861854" duration="1789000" />
+      <workItem from="1573049238160" duration="5815000" />
+      <workItem from="1575637714472" duration="3875000" />
+      <workItem from="1575641617765" duration="2968000" />
     </task>
     <servers />
   </component>
@@ -86,7 +121,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

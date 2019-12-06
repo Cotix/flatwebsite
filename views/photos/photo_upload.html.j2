@@ -1,0 +1,66 @@
+{% extends "layouts/application.html.j2" %}
+
+{% block name %} Fotoboek {% endblock %}
+
+{% block content %}
+    <div class="row my-2">
+        <div class="card col-md-6 col-sm offset-md-3 my-2">
+            <div class="card-body">
+                <h5 class="card-title">Foto uploaden</h5>
+                <p class="card-text">
+                <form action="/photos/upload" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label class="form-file-label" for="photo">Kies foto</label>
+                        <input type="file" class="form-control-file" id="photo" name="photo">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="name">Datum</label>
+                        <input type="date" id="date" name="date" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="category">Categorie</label>
+                        <select class="form-control" id="category" name="category">
+                            <option value="">Maak een nieuwe categorie</option>
+                            {% for category in categories %}
+                                <option value="{{category}}">{{ category }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group" id="category_new_group>
+                        <label class="form-label" for="category_new">Nieuwe categorie</label>
+                        <input type="text" id="category_new" name="category_new" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="description">Beschrijving</label>
+                        <textarea rows=3 type="text" id="description" name="description" class="form-control"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Upload!</button>
+                </form>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    <script>
+        const file_upload = $('#photo');
+
+        file_upload.change((e) => {
+            const date = new Date($('#photo')[0].files[0].lastModified);
+            const day = ('0' + date.getDate()).slice(-2);
+            const month = ('0' + (date.getMonth() + 1)).slice(-2);
+
+            const dateformat = date.getFullYear()+'-'+(month)+'-'+(day) ;
+            $('#date').val(dateformat);
+        });
+
+        $('#category').change((e) => {
+            if ($(e.target).val() === '') {
+                $('#category_new_group').show()
+            } else {
+                $('#category_new_group').hide()
+            }
+        });
+    </script>
+{% endblock %}

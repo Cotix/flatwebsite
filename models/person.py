@@ -28,6 +28,12 @@ class Person(db.Model):
     def get_id(self):
         return self.id
 
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'
+
+    def __repr__(self):
+        return str(self)
+
 
 @login_manager.user_loader
 def load_user(user_id):

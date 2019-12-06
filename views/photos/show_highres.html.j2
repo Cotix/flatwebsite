@@ -1,0 +1,19 @@
+{% extends "layouts/application.html.j2" %}
+
+{% block name %} Fotoboek {% endblock %}
+
+{% block content %}
+    <div class="row my-2">
+        <div class="card col my-2">
+            <div class="card-body">
+                <img class="card-img-top" src="/static/uploads/{{photo.filename}}" alt="{{photo.description}}">
+                <p class="card-text">
+                    {{photo.description}}<br/>
+                    <i>Foto gemaakt op {{ photo.creation_date.strftime('%d-%m-%Y') }}</i><br/>
+                    <i>Foto geupload door {{ photo.creator }}</i><br/>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
