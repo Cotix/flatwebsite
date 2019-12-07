@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="3190e59d-ae44-45d3-8231-1d26fcca6646" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/photo_upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/photo_upload.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/photos/photo_upload.html.j2" beforeDir="false" afterPath="$PROJECT_DIR$/views/photos/photo_upload.html.j2" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,6 +41,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1SVQOElCiRyGb338B6iWigRSrXF" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -57,18 +66,6 @@
       <recent name="$PROJECT_DIR$/controllers" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="flatwebsite" type="Python.FlaskServer">
       <module name="flatwebsite" />
@@ -86,6 +83,18 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -100,7 +109,8 @@
       <workItem from="1572703861854" duration="1789000" />
       <workItem from="1573049238160" duration="5815000" />
       <workItem from="1575637714472" duration="3875000" />
-      <workItem from="1575641617765" duration="4581000" />
+      <workItem from="1575641617765" duration="5199000" />
+      <workItem from="1575728603917" duration="1000000" />
     </task>
     <servers />
   </component>

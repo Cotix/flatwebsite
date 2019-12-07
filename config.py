@@ -17,6 +17,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DB_URL')
 
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
+app.config['MAX_CONTENT_LENGTH'] = 128 * 1024 * 1024
 app.config['EETLIJST_URL'] = os.getenv('EETLIJST_URL')
 
 db = SQLAlchemy(app)

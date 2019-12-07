@@ -4,7 +4,7 @@ from datetime import datetime
 from flask import request, redirect, url_for
 from flask_login import login_required, current_user
 from wand.image import Image
-
+from exif import Image as ExifImage
 from config import app, db
 from util import html, random
 from models import Photo
@@ -41,18 +41,33 @@ def photo_upload():
 
     category = request.values.get('category') or request.values.get('category_new')
     date = datetime.strptime(request.values.get('date'), '%Y-%m-%d')
-    photo = request.files.get('photo')
+    photos = request.files.getlist('photo')
     description = request.values.get('description')
-    extension = get_extension(photo.filename)
-    if not category or not date or not photo or not extension:
-        errors = {'category': category, 'date': date, 'photo': photo, 'extension': extension}
+    if not category or not date or not photos:
+        errors = {'category': category, 'date': date, 'photo': photos}
         return photo_upload_page(errors=[k for k, v in errors.items() if not v])
-    filename = f'{random.key(16)}.{extension}'
-    photo.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-    thumbnail(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-    db.session.add(Photo(creator_id=current_user.id, category=category, description=description,
-                         filename=filename, creation_date=date))
-    db.session.commit()
+
+    for photo in photos:
+        try:
+            exif = ExifImage(photo.stream)
+            if exif.has_exif:
+                date_str = exif.get('datetime_original') or exif.get('datetime')
+                if date_str:
+                    photo_date = datetime.strptime(date_str, '%Y:%m:%d %H:%M:%S')
+                else:
+                    photo_date = date
+        except:
+            photo_date = date
+
+        photo.stream.seek(0)
+        extension = get_extension(photo.filename)
+        filename = f'{random.key(16)}.{extension}'
+        photo.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        thumbnail(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        db.session.add(Photo(creator_id=current_user.id, category=category, description=description,
+                             filename=filename, creation_date=photo_date))
+        # Commit per photo in case upload fails halfway
+        db.session.commit()
 
     return redirect(url_for('show_albums'))
 
