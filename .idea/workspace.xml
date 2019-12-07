@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3190e59d-ae44-45d3-8231-1d26fcca6646" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/photo_upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/photo_upload.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/photos/photo_upload.html.j2" beforeDir="false" afterPath="$PROJECT_DIR$/views/photos/photo_upload.html.j2" afterDir="false" />
-    </list>
+    <list default="true" id="3190e59d-ae44-45d3-8231-1d26fcca6646" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -110,7 +103,7 @@
       <workItem from="1573049238160" duration="5815000" />
       <workItem from="1575637714472" duration="3875000" />
       <workItem from="1575641617765" duration="5199000" />
-      <workItem from="1575728603917" duration="1000000" />
+      <workItem from="1575728603917" duration="1298000" />
     </task>
     <servers />
   </component>
