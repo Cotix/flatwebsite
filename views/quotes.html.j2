@@ -5,14 +5,14 @@
 
 {% block content %}
     <div class="row my-2">
-        <div class="card col-md-6 col-sm offset-md-3 my-2">
+        <div class="card col-md-8 col-sm offset-md-2 my-2">
             <div class="card-body">
                 <h5 class="card-title">Quotes</h5>
                 <p class="card-text">
                     <ul>
                     {% for quote in quotes %}
                         <li>
-                            <strong>{{ quote.author.first_name }}:</strong> {{ quote.text }}
+                            <strong>({{ quote.creation_date.strftime('%d-%m-%y %H:%M') }}){{ quote.author.first_name }}:</strong> {{ quote.text }}
                         </li>
                     {% endfor %}
                     </ul>
@@ -22,7 +22,7 @@
         </div>
     </div>
     <div class="row my-2">
-        <div class="card col-md-6 col-sm offset-md-3 my-2">
+        <div class="card col-md-8 col-sm offset-md-2 my-2">
             <div class="card-body">
                 <h5 class="card-title">Item toevoegen</h5>
                 <p class="card-text">
